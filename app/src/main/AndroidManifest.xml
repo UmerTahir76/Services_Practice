@@ -4,7 +4,7 @@
 
     <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
-    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 
     <application
         android:allowBackup="true"
@@ -16,6 +16,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Services_Practice"
         tools:targetApi="31">
+        <service
+            android:name=".RandomNumberService"
+            android:enabled="true"
+            android:exported="true"></service>
+
+        <activity
+            android:name=".Bound"
+            android:exported="false" />
         <activity
             android:name=".HandleMusic"
             android:exported="false" />
@@ -30,8 +38,8 @@
         </activity>
 
         <receiver android:name=".AlarmReceiver" />
-        <service android:name=".MusicService" />
 
+        <service android:name=".MusicService" />
     </application>
 
 </manifest>

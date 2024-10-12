@@ -47,7 +47,7 @@ class MusicService : Service() {
         mediaPlayer.start()
 
         // Keep the service running even if the app is killed
-        return START_STICKY
+        return START_STICKY // it is a flag and used for restarting the service 
     }
 
     override fun onDestroy() {

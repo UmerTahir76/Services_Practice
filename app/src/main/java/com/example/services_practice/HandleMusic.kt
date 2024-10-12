@@ -11,6 +11,8 @@ class HandleMusic : AppCompatActivity() {
     private lateinit var startMusicButton: Button
     private lateinit var stopMusicButton: Button
     private lateinit var shiftButton: Button
+    private lateinit var nextButton: Button
+
 
 
     @SuppressLint("MissingInflatedId")
@@ -21,10 +23,14 @@ class HandleMusic : AppCompatActivity() {
         startMusicButton = findViewById(R.id.startMusicButton)
         stopMusicButton = findViewById(R.id.stopMusicButton)
         shiftButton = findViewById(R.id.shiftScreenButton)
+        nextButton = findViewById(R.id.nextScreenBtn)
 
 
         shiftButton.setOnClickListener{
             startActivity(Intent(this,MainActivity::class.java))
+        }
+        nextButton.setOnClickListener{
+            startActivity(Intent(this,Bound::class.java))
         }
         startMusicButton.setOnClickListener {
             val intent = Intent(this, MusicService::class.java)
