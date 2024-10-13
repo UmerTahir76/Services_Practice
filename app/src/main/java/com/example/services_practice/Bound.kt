@@ -60,6 +60,9 @@ class Bound : AppCompatActivity() {
         Intent(this, RandomNumberService::class.java).also { intent ->
             bindService(intent, connection, Context.BIND_AUTO_CREATE)
         }
+    //also { intent -> ... } is a Kotlin scope function that allows you to perform additional operations
+    // on the object.In this case, it means: "After creating the intent, bind to the service using this intent."
+    //Context.BIND_AUTO_CREATE: This flag tells the system to create the service if it doesn't already exist
     }
 
     override fun onStop() {
